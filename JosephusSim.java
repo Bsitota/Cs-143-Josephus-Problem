@@ -60,11 +60,24 @@ public class JosephusSim {
    }
    
    public void eliminate() {
+     if(isOver()){
+       return;
+     }
       // count to the elimination count
+      for(int i = 0; i < eliminationCount -1; i++){
+         track = track.next;
+      }
       
       // print who will be eliminated
+      PersonNode eliminatedPerson = track.next;
+      System.out.println(eliminatedPerson.name +  " is eliminated");
       
       // eliminate the person and update "front" of the circle and size
+      track.next = eliminatedPerson.next;
+      if(circle == eliminatedPerson){
+          circle = eliminatedPerson.next;
+      }
+      size--;
 
    }
    
