@@ -70,7 +70,7 @@ public class JosephusSim {
    
    public boolean isOver() {
       // check if there's only one person left in the circle
-      return false;
+      return size == 1;
    }
    
    public String toString() {
